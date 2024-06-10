@@ -11,6 +11,7 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
    
@@ -142,9 +143,8 @@ public class Main extends javax.swing.JFrame {
 
     private void bttMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttMateriaActionPerformed
         // TODO add your handling code here:
-        Materias abrirMaterias= new Materias();
+        MateriaVista abrirMaterias= new MateriaVista(this, true);
         abrirMaterias.setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_bttMateriaActionPerformed
 
     private void bttSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttSalirActionPerformed
@@ -158,7 +158,6 @@ public class Main extends javax.swing.JFrame {
         abrirNotas.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_bttNotasActionPerformed
-
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

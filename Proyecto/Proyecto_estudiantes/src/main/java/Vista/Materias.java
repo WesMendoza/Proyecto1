@@ -6,16 +6,15 @@ package Vista;
 
 /**
  *
- * @author WDMS
+ * @author Axell Castro
  */
 public class Materias extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Materias
-     */
     public Materias() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -225,13 +224,12 @@ public class Materias extends javax.swing.JFrame {
 
     private void bttregresarmateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttregresarmateriasActionPerformed
         // TODO add your handling code here:
-        Main regresar= new Main();
+        Main regresar = new Main();
         regresar.setVisible(true);
         //this.setVisible(false);
         dispose();
     }//GEN-LAST:event_bttregresarmateriasActionPerformed
 
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bttEditarMaterias;
