@@ -149,7 +149,7 @@ public class Main extends javax.swing.JFrame {
 
     private void bttSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttSalirActionPerformed
         // TODO add your handling code here:
-        dispose();
+        System.exit(0);
     }//GEN-LAST:event_bttSalirActionPerformed
 
     private void bttNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttNotasActionPerformed

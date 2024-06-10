@@ -1,21 +1,34 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Vista;
 
+import Model.Estudiantes;
+import Model.Tabla_estudiante;
+import javax.swing.table.AbstractTableModel;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- *
- * @author WDMS
+ *@author WDMS
  */
 public class Estudiante extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Estudiante
-     */
+  
+    // Constructor
     public Estudiante() {
         initComponents();
+        cargarDatosEnTabla();
+    } 
+    // Método para cargar los datos quemados en la tabla
+    private void cargarDatosEnTabla() {
+        // Crear una lista de estudiantes con datos quemados
+        List<Estudiantes> estudiantes = new ArrayList<>();
+        estudiantes.add(new Estudiantes("0951887868", "Wesner", "Mendoza", "Software", 8));
+        estudiantes.add(new Estudiantes("87654321", "Maria", "Gomez", "Medicina", 3));
+        estudiantes.add(new Estudiantes("12348765", "Carlos", "Lopez", "Derecho", 1));
+
+        // Crear el modelo de tabla y configurarlo en el JTable
+        Tabla_estudiante model = new Tabla_estudiante(estudiantes);
+        jtbEstudiantes.setModel(model);
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -112,15 +125,20 @@ public class Estudiante extends javax.swing.JFrame {
 
         jtbEstudiantes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Cedula", "Nombre", "Apellido", "Carrera", "Semestre"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jtbEstudiantes);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -156,7 +174,7 @@ public class Estudiante extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 546, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(bttRegistrarEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bttRegistrarEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bttEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)

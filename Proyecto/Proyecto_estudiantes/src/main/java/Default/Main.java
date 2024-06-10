@@ -1,5 +1,9 @@
 package Default;
 
+import Vista.Estudiante;
+import java.awt.List;
+import javax.swing.table.AbstractTableModel;
+
 
 /**
  *
@@ -17,5 +21,6 @@ public class Main {
         });
     }
 }
+
 
 
