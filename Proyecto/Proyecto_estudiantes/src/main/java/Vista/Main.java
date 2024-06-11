@@ -14,6 +14,13 @@ public class Main extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }
 
+    public static void main(String[] args) {
+        // Crear una instancia de la ventana principal (Main)
+        Main mainFrame = new Main();
+        // Hacer visible la ventana principal
+        mainFrame.setVisible(true);
+    }
+
    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
