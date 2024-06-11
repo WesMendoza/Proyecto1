@@ -4,13 +4,12 @@ import Vista.Estudiante;
 import javax.swing.table.AbstractTableModel;
 import java.util.List;
 /**
- *
- * @author WDMS
+ *@author Perez Franco Jonathan
  */
 public class Tabla_estudiante extends AbstractTableModel {
-    private final String[] columnNames = {"Cédula", "Nombre", "Apellido", "Carrera", "Semestre"};
-    private final List<Estudiantes> estudiantes;
-    
+     private final String[] columnNames = {"Cédula", "Nombre", "Apellido", "Carrera", "Semestre"};
+    private List<Estudiantes> estudiantes;
+
     public Tabla_estudiante(List<Estudiantes> estudiantes) {
         this.estudiantes = estudiantes;
     }
@@ -26,21 +25,46 @@ public class Tabla_estudiante extends AbstractTableModel {
     }
 
     @Override
+    public String getColumnName(int columnIndex) {
+        return columnNames[columnIndex];
+    }
+
+    @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        Estudiantes alumno = estudiantes.get(rowIndex);
+        Estudiantes estudiante = estudiantes.get(rowIndex);
         switch (columnIndex) {
-            case 0: return alumno.getCedula();
-            case 1: return alumno.getNombre();
-            case 2: return alumno.getApellido();
-            case 3: return alumno.getCarrera();
-            case 4: return alumno.getSemestre();
-            default: return null;
+            case 0:
+                return estudiante.getCedula();
+            case 1:
+                return estudiante.getNombre();
+            case 2:
+                return estudiante.getApellido();
+            case 3:
+                return estudiante.getCarrera();
+            case 4:
+                return estudiante.getSemestre();
+            default:
+                return null;
         }
     }
-    
+
     @Override
-    public String getColumnName(int column) {
-        return columnNames[column];
+    public Class<?> getColumnClass(int columnIndex) {
+        switch (columnIndex) {
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                return String.class;
+            case 4:
+                return Integer.class;
+            default:
+                return Object.class;
+        }
     }
-   
+
+    public void addEstudiante(Estudiantes estudiante) {
+        estudiantes.add(estudiante);
+        fireTableRowsInserted(estudiantes.size() - 1, estudiantes.size() - 1);
+    }
 }
