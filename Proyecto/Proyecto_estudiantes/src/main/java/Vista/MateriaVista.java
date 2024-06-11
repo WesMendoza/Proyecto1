@@ -1,6 +1,6 @@
 package Vista;
 
-import Control.MateriaController;
+import control.MateriaController;
 import Model.Materia;
 import java.awt.Component;
 import java.util.List;
