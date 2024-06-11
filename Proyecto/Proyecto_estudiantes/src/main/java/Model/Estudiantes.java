@@ -2,7 +2,7 @@ package Model;
 
 /**
  *
- * @author WDMS
+ * @author Perez Franco Jonathan Ruben
  */
 public class Estudiantes {
     private String Cedula;
@@ -52,3 +52,4 @@ public class Estudiantes {
     }
     
 }
+
